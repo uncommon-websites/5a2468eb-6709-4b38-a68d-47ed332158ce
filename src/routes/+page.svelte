@@ -5,7 +5,7 @@
     const traditionalImage = "/generated/image-classic-traditional-luxury-home-with-bri-1766525545393-2.webp";
     const modernImage = "/generated/image-contemporary-modern-luxury-home-with-cle-1766525548072-3.webp";
     const mediterraneanImage = "/generated/image-mediterranean-villa-with-terracotta-roof-1766525551080-4.webp";
-    const factoryImage = "/generated/image-advanced-factory-floor-with-precision-ho-1766525553751-5.webp";
+    const factoryImage = "/generated/image-advanced-factory-floor-with-precision-en-1766526812739-0.webp";
     const fireResistantImage = "/generated/image-luxury-home-detail-showing-fire-resistan-1766525556373-6.webp";
     const foundersImage = "/generated/image-professional-couple-in-their-50s-archite-1766525558982-7.webp";
     const happyFamilyImage = "/generated/image-happy-affluent-family-standing-in-front--1766525561394-8.webp";
