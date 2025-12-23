@@ -1,21 +1,19 @@
 <script lang="ts">
-    // Images placeholders
-    const heroImage = "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2560&auto=format&fit=crop";
-    const deskImage = "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1000&auto=format&fit=crop";
-    const glassesImage = "https://images.unsplash.com/photo-1590525626244-6720d234853f?q=80&w=1000&auto=format&fit=crop";
-    const bedroomImage = "https://images.unsplash.com/photo-1505693416388-b034680950ec?q=80&w=2560&auto=format&fit=crop";
-    const bedCornerImage = "https://images.unsplash.com/photo-1616594039964-40891a909d93?q=80&w=1000&auto=format&fit=crop";
-    const woodDetailImage = "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1000&auto=format&fit=crop";
-    const shelfDetailImage = "https://images.unsplash.com/photo-1595515106962-5907659ed678?q=80&w=1000&auto=format&fit=crop";
-    const shelfFullImage = "https://images.unsplash.com/photo-1594040226829-7f251ab46d80?q=80&w=1000&auto=format&fit=crop";
-    const livingRoomImage = "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2560&auto=format&fit=crop";
-    const hallwayImage = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop";
-    const kitchenImage = "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop";
-    const terraceImage = "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2560&auto=format&fit=crop";
-    const woodJoineryImage = "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1000&auto=format&fit=crop";
-    const kitchenIslandImage = "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop";
-    const ctaLeft = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2000&auto=format&fit=crop";
-    const ctaRight = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000&auto=format&fit=crop";
+    // Versa Villa Images
+    const heroImage = "/generated/image-stunning-modern-luxury-home-exterior-wit-1766525539361-0.webp";
+    const capeCodImage = "/generated/image-elegant-cape-cod-style-luxury-home-with--1766525542498-1.webp";
+    const traditionalImage = "/generated/image-classic-traditional-luxury-home-with-bri-1766525545393-2.webp";
+    const modernImage = "/generated/image-contemporary-modern-luxury-home-with-cle-1766525548072-3.webp";
+    const mediterraneanImage = "/generated/image-mediterranean-villa-with-terracotta-roof-1766525551080-4.webp";
+    const factoryImage = "/generated/image-advanced-factory-floor-with-precision-ho-1766525553751-5.webp";
+    const fireResistantImage = "/generated/image-luxury-home-detail-showing-fire-resistan-1766525556373-6.webp";
+    const foundersImage = "/generated/image-professional-couple-in-their-50s-archite-1766525558982-7.webp";
+    const happyFamilyImage = "/generated/image-happy-affluent-family-standing-in-front--1766525561394-8.webp";
+    const kitchenImage = "/generated/image-luxurious-modern-kitchen-interior-with-h-1766525564104-9.webp";
+    const bedroomImage = "/generated/image-elegant-master-bedroom-with-large-window-1766525566627-10.webp";
+    const livingRoomImage = "/generated/image-spacious-open-concept-living-room-with-h-1766525569198-11.webp";
+    const qualityControlImage = "/generated/image-construction-worker-inspecting-modular-h-1766525571829-12.webp";
+    const outdoorLivingImage = "/generated/image-beautiful-outdoor-living-space-with-pati-1766525574453-13.webp";
 
 </script>
 
@@ -23,175 +21,267 @@
     <!-- Hero Section -->
     <section class="w-full mb-16 md:mb-24 px-4 md:px-6 max-w-[1600px] mx-auto">
         <div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden">
-            <img src={heroImage} alt="Kent Avenue Penthouse" class="w-full h-full object-cover" />
-            <button class="absolute bottom-6 right-6 bg-transparent border border-white/50 text-white px-4 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors flex items-center gap-2">
-                Share
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                </svg>
-            </button>
+            <img src={heroImage} alt="Versa Villa Luxury Home" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl">Your Luxury Home in Six Months</h1>
+                <p class="text-lg md:text-xl font-light mb-8 max-w-2xl opacity-95">Fire-resistant modular construction. Fixed pricing. Guaranteed timeline. No compromises.</p>
+                <a href="#contact" class="bg-white text-black px-8 py-4 text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors">
+                    Schedule Consultation
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Project Info -->
+    <!-- Value Proposition -->
     <section class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-            <div>
-                <h1 class="font-display text-4xl md:text-5xl text-gray-900 mb-8">Kent Avenue Penthouse</h1>
-                <div class="text-gray-600 text-sm leading-relaxed space-y-4 max-w-md font-light">
-                    <p>
-                        Perched high above the bustling city of New York, with magnificent views of the East River and the iconic Manhattan skyline, this unique penthouse flat combines warm minimalism and tactile materiality.
-                    </p>
-                    <p>
-                        The flat, which was designed and decorated by Norm Architects, strikes a perfect balance between New York's raw industrial vibe and a timeless Scandinavian aesthetic.
-                    </p>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-y-6 text-[11px] uppercase tracking-wider">
-                <div class="text-gray-400">Private residence</div>
-                <div class="text-gray-900">New York City, USA</div>
-
-                <div class="text-gray-400">Architect</div>
-                <div class="text-gray-900">Norm Architects</div>
-
-                <div class="text-gray-400">Photographer</div>
-                <div class="text-gray-900">Jonas Bjerre-Poulsen</div>
-
-                <div class="col-span-2 pt-6 border-t border-gray-100 mt-2">
-                    <div class="text-gray-400 mb-1">Product</div>
-                    <div class="text-gray-900">Dinesen HeartOak, Natural Oil, Dinesen Collection</div>
-                </div>
-            </div>
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Why Versa Villa</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
+                We've reimagined luxury homebuilding for discerning homeowners who refuse to compromise on quality or timeline.
+            </p>
         </div>
-    </section>
-
-    <!-- Image Grid 1 -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-            <div class="md:col-span-5 md:col-start-2">
-                <img src={deskImage} alt="Desk detail" class="w-full aspect-[3/4] object-cover mb-4" />
-                <p class="text-xs text-gray-400 font-light max-w-xs mt-8 leading-relaxed">
-                    The dwelling was designed to provide a calm refuge from the hectic pulse of the city, with a minimalist interior that combines warm, functional and aesthetic qualities to create a solving and harmonious setting.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center">
+                <div class="text-5xl font-display mb-4 text-primary-600">6</div>
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Months Guaranteed</h3>
+                <p class="text-gray-600 text-sm leading-relaxed font-light">
+                    Move into your dream home in six months, not the 12-24 months typical of traditional construction. Our factory-controlled process eliminates delays.
                 </p>
             </div>
-            <div class="md:col-span-5 md:col-start-8 md:mt-32">
-                 <img src={glassesImage} alt="Glasses detail" class="w-full aspect-square object-cover" />
+            <div class="text-center">
+                <div class="text-5xl font-display mb-4 text-primary-600">$0</div>
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Cost Overruns</h3>
+                <p class="text-gray-600 text-sm leading-relaxed font-light">
+                    Fixed pricing from day one. No surprise costs or budget overruns. Traditional builds average 20-40% over budget—we guarantee your price.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl font-display mb-4 text-primary-600">100%</div>
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Fire Resistant</h3>
+                <p class="text-gray-600 text-sm leading-relaxed font-light">
+                    Purpose-built to exceed California's stringent wildfire codes. Advanced materials and construction techniques protect your investment and family.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Full Width Image -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <img src={bedroomImage} alt="Bedroom view" class="w-full aspect-[16/9] md:aspect-[21/9] object-cover" />
+    <!-- Design Styles Section -->
+    <section id="models" class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Four Timeless Design Styles</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
+                Choose from architect-developed styles, each customizable to your vision with designer-selected finish packages.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src={capeCodImage} alt="Cape Cod Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <h3 class="text-2xl font-display mb-2">Cape Cod</h3>
+                <p class="text-gray-600 text-sm font-light">Classic New England charm with modern luxury amenities</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src={traditionalImage} alt="Traditional Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <h3 class="text-2xl font-display mb-2">Traditional</h3>
+                <p class="text-gray-600 text-sm font-light">Timeless elegance with sophisticated architectural details</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src={modernImage} alt="Modern Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <h3 class="text-2xl font-display mb-2">Modern</h3>
+                <p class="text-gray-600 text-sm font-light">Clean lines and open spaces for contemporary living</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-4">
+                    <img src={mediterraneanImage} alt="Mediterranean Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <h3 class="text-2xl font-display mb-2">Mediterranean</h3>
+                <p class="text-gray-600 text-sm font-light">Warm, inviting design inspired by coastal European villas</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Image Grid 2 -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Interior Quality Showcase -->
+    <section class="w-full mb-24 md:mb-32">
+        <img src={livingRoomImage} alt="Luxury Living Room" class="w-full h-[80vh] object-cover" />
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">The Versa Villa Process</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
+                Factory precision meets luxury craftsmanship. Our streamlined process eliminates waste, delays, and uncertainty.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
-                <img src={bedCornerImage} alt="Bedroom corner" class="w-full aspect-[3/4] object-cover" />
+                <img src={factoryImage} alt="Factory Construction" class="w-full aspect-[16/9] object-cover" />
             </div>
-            <div class="flex flex-col justify-between">
-                <img src={woodDetailImage} alt="Wood detail" class="w-full aspect-[3/4] object-cover mb-8" />
-                <div class="max-w-xs ml-auto">
-                     <p class="text-xs text-gray-400 font-light leading-relaxed">
-                        Dinesen Oak plays a central role in the bespoke solutions that define the interior. The timeless quality of the wood is highlighted in custom-made features designed to match the feel and functions of the flat. These specially designed elements include a bedframe, a wardrobe, a shelving unit and an integrated desk, all made of Dinesen Oak, which adds a warm and organic touch to the space.
+            <div>
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide">Factory Quality Control</h3>
+                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
+                    Our factory-controlled environment applies automobile-industry quality control standards to every home. Precision-engineered modules are built with advanced materials in optimal conditions, eliminating the variables that plague traditional construction.
+                </p>
+                <p class="text-gray-600 text-sm leading-relaxed font-light">
+                    While your modules are being constructed, we simultaneously prepare your site—a parallel efficiency approach that cuts months off traditional timelines without sacrificing quality.
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide">Stress-Free Experience</h3>
+                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
+                    Our concierge project management handles everything: permits, inspections, material selection, and contractor coordination. You receive weekly updates and make selections through our intuitive online platform.
+                </p>
+                <p class="text-gray-600 text-sm leading-relaxed font-light">
+                    Curated design packages simplify decision-making without limiting your vision. Every choice is pre-vetted for quality and compatibility, eliminating the overwhelming burden of traditional construction.
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src={qualityControlImage} alt="Quality Control" class="w-full aspect-[3/4] object-cover" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire Resistance Feature -->
+    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+             <div class="md:col-span-5">
+                <img src={fireResistantImage} alt="Fire-Resistant Construction" class="w-full aspect-[4/5] object-cover" />
+            </div>
+            <div class="md:col-span-6 md:col-start-7">
+                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Built for Wildfire Zones</h2>
+                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
+                    Purpose-built to exceed California's stringent wildfire building codes, every Versa Villa home features advanced fire-resistant materials and construction techniques engineered specifically for wildfire-prone areas.
+                </p>
+                <p class="text-gray-600 text-sm leading-relaxed font-light mb-6">
+                    This isn't just about safety—it's about significant insurance cost savings. Our pre-insurance benefits represent a massive selling point, with homeowners seeing substantial reductions in their insurance premiums year after year.
+                </p>
+                <div class="border-t border-gray-200 pt-6">
+                    <p class="text-xs text-gray-400 font-light uppercase tracking-wider">
+                        Serving Palisades, Altadena, Malibu, and wildfire-prone areas throughout California
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Grid 3 -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
-             <div class="md:col-span-5">
-                <img src={shelfDetailImage} alt="Shelf detail" class="w-full aspect-[4/5] object-cover" />
-            </div>
-            <div class="md:col-span-7">
-                <img src={shelfFullImage} alt="Shelf full view" class="w-full aspect-[4/3] object-cover" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Large Living Room Image -->
-    <section class="w-full mb-24 md:mb-32">
-        <img src={livingRoomImage} alt="Living room" class="w-full h-[80vh] object-cover" />
-    </section>
-
-    <!-- Image Grid 4 & Text -->
+    <!-- Interior Showcase Grid -->
     <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-start">
-            <img src={hallwayImage} alt="Hallway" class="w-full aspect-[3/4] object-cover" />
+            <img src={bedroomImage} alt="Master Bedroom" class="w-full aspect-[3/4] object-cover" />
             <div class="md:pt-32">
-                 <img src={kitchenImage} alt="Kitchen detail" class="w-full aspect-[3/4] object-cover" />
+                 <img src={kitchenImage} alt="Luxury Kitchen" class="w-full aspect-[3/4] object-cover" />
             </div>
         </div>
         <div class="flex justify-end">
              <p class="text-xs text-gray-400 font-light max-w-md leading-relaxed">
-                The tactile materials selected for the interior solutions create an experience that elevates the design from being merely visual into a strong sensuous impact. Every element of the interior was carefully selected to support the calm and harmonious atmosphere. Dinesen Oak make a contribution that is not just aesthetic but also functional as the natural and durable materials blend perfectly into Norm Architects' stringent and simple design expression.
+                Every finish, fixture, and material is carefully selected from our designer-curated packages. High-end appliances, premium countertops, and sophisticated lighting come standard—luxury that maintains investment value without the overwhelming burden of endless decisions.
             </p>
         </div>
     </section>
 
-    <!-- Terrace Image -->
+    <!-- Outdoor Living -->
     <section class="w-full mb-24 md:mb-32">
-        <img src={terraceImage} alt="Terrace" class="w-full h-[70vh] object-cover" />
+        <img src={outdoorLivingImage} alt="Outdoor Living Space" class="w-full h-[70vh] object-cover" />
     </section>
 
-    <!-- Bottom Text -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="max-w-md">
-            <p class="text-xs text-gray-400 font-light leading-relaxed">
-                With a high priority on the sourcing of materials and a keen eye for details, Norm Architects demonstrate their dedication to quality and timeless design in their design of Kent Avenue Penthouse. The result is a dwelling where aesthetic and functional qualities come together in a harmonious, modern and luxurious space - a genuine tribute to natural materials and their ability to ennoble calm in an otherwise hectic world.
-            </p>
+    <!-- Founders Section -->
+    <section id="founders" class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src={foundersImage} alt="Ardie and Emila Tavangarian" class="w-full aspect-[16/9] object-cover" />
+            </div>
+            <div>
+                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Meet the Founders</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Ardie Tavangarian, CEO</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed font-light">
+                            Ardie's decades in architectural excellence and construction innovation give him deep insight into luxury homebuilding inefficiencies. His vision to guarantee 6-month timelines stems from firsthand frustration with traditional construction's delays and cost overruns.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Emila Tavangarian, Head of Sales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed font-light">
+                            Emila's experience in luxury design and client relations positions her to understand discerning homeowners' frustrations with traditional builders. Her drive comes from witnessing clients endure years of construction stress and broken promises.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Final Grid -->
+    <!-- Happy Homeowners -->
     <section class="max-w-[1600px] mx-auto px-6 mb-32 md:mb-40">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <img src={woodJoineryImage} alt="Wood joinery" class="w-full aspect-[3/4] object-cover" />
-            <div class="pt-20">
-                <img src={kitchenIslandImage} alt="Kitchen island" class="w-full aspect-[3/4] object-cover" />
+        <div class="relative">
+            <img src={happyFamilyImage} alt="Happy Homeowners" class="w-full aspect-[16/9] object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+                <p class="text-2xl md:text-3xl font-display mb-4 max-w-2xl">
+                    "We moved into our dream home in exactly six months. No delays, no surprises, just exceptional quality."
+                </p>
+                <p class="text-sm font-light opacity-90">Palisades Homeowner</p>
             </div>
         </div>
     </section>
 
-    <!-- Share Section -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-32">
-        <h3 class="font-display text-2xl mb-6">Share</h3>
-        <div class="flex gap-6 text-xs text-gray-400 uppercase tracking-wide">
-            <a href="#" class="hover:text-black transition-colors">Pinterest</a>
-            <a href="#" class="hover:text-black transition-colors">Twitter</a>
-            <a href="#" class="hover:text-black transition-colors">E-mail</a>
-            <a href="#" class="hover:text-black transition-colors">LinkedIn</a>
-            <a href="#" class="hover:text-black transition-colors">Facebook</a>
+    <!-- Why Choose Us -->
+    <section id="why-versa" class="bg-gray-50 py-24 mb-32">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Why Discerning Homeowners Choose Versa Villa</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <div class="bg-white p-8">
+                    <h3 class="font-bold text-lg mb-3 uppercase tracking-wide">Traditional Construction</h3>
+                    <ul class="space-y-2 text-gray-600 font-light">
+                        <li>• 12-24 months to completion</li>
+                        <li>• 20-40% cost overruns typical</li>
+                        <li>• Endless decisions and stress</li>
+                        <li>• Weather delays and quality issues</li>
+                        <li>• Constant contractor coordination</li>
+                        <li>• Variable on-site quality control</li>
+                    </ul>
+                </div>
+                <div class="bg-black text-white p-8">
+                    <h3 class="font-bold text-lg mb-3 uppercase tracking-wide">Versa Villa</h3>
+                    <ul class="space-y-2 font-light">
+                        <li>• 6 months guaranteed timeline</li>
+                        <li>• Fixed pricing, zero surprises</li>
+                        <li>• Curated choices, stress-free</li>
+                        <li>• Factory precision, no delays</li>
+                        <li>• Concierge project management</li>
+                        <li>• Automobile-industry quality standards</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Bottom CTA -->
-    <section class="w-full grid grid-cols-1 md:grid-cols-2 h-[600px]">
-        <div class="relative group overflow-hidden">
-            <img src={ctaLeft} alt="Get inspired" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
-                <h2 class="font-display text-3xl md:text-4xl mb-2">Get inspired</h2>
-                <p class="text-sm font-light mb-8 opacity-90">Explore our many projects from around the world.</p>
-                <button class="border border-white px-8 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
-                    Order Cases
-                </button>
-            </div>
-        </div>
-        <div class="relative group overflow-hidden">
-            <img src={ctaRight} alt="Price Lists" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
-                <h2 class="font-display text-3xl md:text-4xl mb-2">Receive Dinesen Price Lists</h2>
-                <p class="text-sm font-light mb-8 opacity-90">A Dinesen floor sprouts in the dream, but grows from reality.</p>
-                <button class="border border-white px-8 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
-                    Explore
-                </button>
+    <!-- Final CTA -->
+    <section id="contact" class="w-full mb-32">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="bg-primary-950 text-white p-12 md:p-20 text-center">
+                <h2 class="font-display text-3xl md:text-5xl mb-6">Ready to Build Your Dream Home?</h2>
+                <p class="text-lg font-light mb-8 opacity-90 max-w-2xl mx-auto">
+                    Schedule a consultation to explore your design options, review our process, and discover how we can deliver your luxury home in just six months.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-white text-black px-8 py-4 text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors">
+                        Schedule Consultation
+                    </a>
+                    <a href="#" class="border border-white text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                        Virtual Walkthrough
+                    </a>
+                </div>
+                <p class="text-xs mt-8 opacity-75">Serving Palisades, Altadena, Malibu, and all of California</p>
             </div>
         </div>
     </section>
