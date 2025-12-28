@@ -44,7 +44,7 @@
 
 
 <section class="hero">
-	<video class="hero-video" autoplay muted loop playsinline>
+	<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/hero-poster.webp">
 		<source src="/hero.webm" type="video/webm" />
 		<source src="/hero.mp4" type="video/mp4" />
 	</video>
