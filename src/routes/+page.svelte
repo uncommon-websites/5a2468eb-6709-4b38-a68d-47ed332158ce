@@ -1,289 +1,617 @@
 <script lang="ts">
-    // Versa Villa Images
-    const heroImage = "/generated/image-stunning-modern-luxury-home-exterior-wit-1766525539361-0.webp";
-    const capeCodImage = "/generated/image-elegant-cape-cod-style-luxury-home-with--1766525542498-1.webp";
-    const traditionalImage = "/generated/image-classic-traditional-luxury-home-with-bri-1766525545393-2.webp";
-    const modernImage = "/generated/image-contemporary-modern-luxury-home-with-cle-1766525548072-3.webp";
-    const mediterraneanImage = "/generated/image-mediterranean-villa-with-terracotta-roof-1766525551080-4.webp";
-    const factoryImage = "/generated/image-advanced-factory-floor-with-precision-en-1766526812739-0.webp";
-    const fireResistantImage = "/generated/image-luxury-home-detail-showing-fire-resistan-1766525556373-6.webp";
-    const foundersImage = "/generated/image-professional-couple-in-their-50s-archite-1766525558982-7.webp";
-    const happyFamilyImage = "/generated/image-happy-affluent-family-standing-in-front--1766525561394-8.webp";
-    const kitchenImage = "/generated/image-luxurious-modern-kitchen-interior-with-h-1766525564104-9.webp";
-    const bedroomImage = "/generated/image-elegant-master-bedroom-with-large-window-1766525566627-10.webp";
-    const livingRoomImage = "/generated/image-spacious-open-concept-living-room-with-h-1766525569198-11.webp";
-    const qualityControlImage = "/generated/image-construction-worker-inspecting-modular-h-1766525571829-12.webp";
-    const outdoorLivingImage = "/generated/image-beautiful-outdoor-living-space-with-pati-1766525574453-13.webp";
+	import { onMount, tick } from 'svelte';
 
+	let mounted = false;
+	let showModal = false;
+	let fullName = '';
+	let email = '';
+	let submitted = false;
+	let nameInput: HTMLInputElement | undefined;
+
+	onMount(() => {
+		mounted = true;
+	});
+
+	async function openModal() {
+		showModal = true;
+		await tick();
+		nameInput?.focus();
+	}
+
+	function closeModal() {
+		showModal = false;
+	}
+
+	function handleSubmit(e: Event) {
+		e.preventDefault();
+		// Handle form submission here
+		console.log({ fullName, email });
+		submitted = true;
+		setTimeout(() => {
+			showModal = false;
+			submitted = false;
+			fullName = '';
+			email = '';
+		}, 2000);
+	}
+
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'Escape') closeModal();
+	}
 </script>
 
-<div class="w-full">
-    <!-- Hero Section -->
-    <section class="w-full mb-16 md:mb-24 px-4 md:px-6 max-w-[1600px] mx-auto">
-        <div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden">
-            <img src={heroImage} alt="Versa Villa Luxury Home" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
-                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl">Your Luxury Home in Six Months</h1>
-                <p class="text-lg md:text-xl font-light mb-8 max-w-2xl opacity-95">Fire-resistant modular construction. Fixed pricing. Guaranteed timeline. No compromises.</p>
-                <a href="#contact" class="bg-white text-black px-8 py-4 text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors">
-                    Schedule Consultation
-                </a>
-            </div>
-        </div>
-    </section>
+<svelte:window on:keydown={handleKeydown} />
 
-    <!-- Value Proposition -->
-    <section class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="text-center mb-16">
-            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Why Versa Villa</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
-                We've reimagined luxury homebuilding for discerning homeowners who refuse to compromise on quality or timeline.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="text-center">
-                <div class="text-5xl font-display mb-4 text-primary-600">6</div>
-                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Months Guaranteed</h3>
-                <p class="text-gray-600 text-sm leading-relaxed font-light">
-                    Move into your dream home in six months, not the 12-24 months typical of traditional construction. Our factory-controlled process eliminates delays.
-                </p>
-            </div>
-            <div class="text-center">
-                <div class="text-5xl font-display mb-4 text-primary-600">$0</div>
-                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Cost Overruns</h3>
-                <p class="text-gray-600 text-sm leading-relaxed font-light">
-                    Fixed pricing from day one. No surprise costs or budget overruns. Traditional builds average 20-40% over budget—we guarantee your price.
-                </p>
-            </div>
-            <div class="text-center">
-                <div class="text-5xl font-display mb-4 text-primary-600">100%</div>
-                <h3 class="text-xl font-bold mb-3 uppercase tracking-wide">Fire Resistant</h3>
-                <p class="text-gray-600 text-sm leading-relaxed font-light">
-                    Purpose-built to exceed California's stringent wildfire codes. Advanced materials and construction techniques protect your investment and family.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Design Styles Section -->
-    <section id="models" class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="text-center mb-16">
-            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Four Timeless Design Styles</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
-                Choose from architect-developed styles, each customizable to your vision with designer-selected finish packages.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-4">
-                    <img src={capeCodImage} alt="Cape Cod Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <h3 class="text-2xl font-display mb-2">Cape Cod</h3>
-                <p class="text-gray-600 text-sm font-light">Classic New England charm with modern luxury amenities</p>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-4">
-                    <img src={traditionalImage} alt="Traditional Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <h3 class="text-2xl font-display mb-2">Traditional</h3>
-                <p class="text-gray-600 text-sm font-light">Timeless elegance with sophisticated architectural details</p>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-4">
-                    <img src={modernImage} alt="Modern Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <h3 class="text-2xl font-display mb-2">Modern</h3>
-                <p class="text-gray-600 text-sm font-light">Clean lines and open spaces for contemporary living</p>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-4">
-                    <img src={mediterraneanImage} alt="Mediterranean Style" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <h3 class="text-2xl font-display mb-2">Mediterranean</h3>
-                <p class="text-gray-600 text-sm font-light">Warm, inviting design inspired by coastal European villas</p>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+	<video class="hero-video" autoplay muted loop playsinline>
+		<source src="/hero.webm" type="video/webm" />
+		<source src="/hero.mp4" type="video/mp4" />
+	</video>
+	<div class="hero-overlay"></div>
+	<div class="hero-gradient-left"></div>
+	<div class="hero-gradient-right"></div>
+	<div class="hero-line"></div>
 
-    <!-- Interior Quality Showcase -->
-    <section class="w-full mb-24 md:mb-32">
-        <img src={livingRoomImage} alt="Luxury Living Room" class="w-full h-[80vh] object-cover" />
-    </section>
+	<div class="hero-content">
+		<!-- Header -->
+		<header class="header">
+			<div class="logo" class:visible={mounted}>
+				<img src="/logo-versa.svg" alt="Versa Villa by ARYA" class="logo-img" />
+			</div>
+			<p class="description" class:visible={mounted}>
+				Born from resilience and engineered for peace of mind, our homes bring the protection you need together with the architecture that inspires — delivered in months, not years. Fire-resistant, pre-insured, and crafted with intention, each Versa Villa home is built to stand secure while feeling effortlessly refined.
+			</p>
+		</header>
 
-    <!-- Process Section -->
-    <section id="process" class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="text-center mb-16">
-            <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">The Versa Villa Process</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
-                Factory precision meets luxury craftsmanship. Our streamlined process eliminates waste, delays, and uncertainty.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-                <img src={factoryImage} alt="Factory Construction" class="w-full aspect-[16/9] object-cover" />
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide">Factory Quality Control</h3>
-                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
-                    Our factory-controlled environment applies automobile-industry quality control standards to every home. Precision-engineered modules are built with advanced materials in optimal conditions, eliminating the variables that plague traditional construction.
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed font-light">
-                    While your modules are being constructed, we simultaneously prepare your site—a parallel efficiency approach that cuts months off traditional timelines without sacrificing quality.
-                </p>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide">Stress-Free Experience</h3>
-                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
-                    Our concierge project management handles everything: permits, inspections, material selection, and contractor coordination. You receive weekly updates and make selections through our intuitive online platform.
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed font-light">
-                    Curated design packages simplify decision-making without limiting your vision. Every choice is pre-vetted for quality and compatibility, eliminating the overwhelming burden of traditional construction.
-                </p>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src={qualityControlImage} alt="Quality Control" class="w-full aspect-[3/4] object-cover" />
-            </div>
-        </div>
-    </section>
+		<!-- Main Content - Center Left -->
+		<div class="main-content">
+			<h1 class="headline">
+				<span class="line" class:visible={mounted} style="--delay: 0.3s">
+					<span class="line-inner">Versa Villa was created with one</span>
+				</span>
+				<span class="line" class:visible={mounted} style="--delay: 0.4s">
+					<span class="line-inner">purpose: to rebuild stronger,</span>
+				</span>
+				<span class="line" class:visible={mounted} style="--delay: 0.5s">
+					<span class="line-inner">safer, and more beautifully than</span>
+				</span>
+				<span class="line" class:visible={mounted} style="--delay: 0.6s">
+					<span class="line-inner">ever before.</span>
+				</span>
+			</h1>
+			<p class="description-mobile" class:visible={mounted}>
+				Born from resilience and engineered for peace of mind, our homes bring the protection you need together with the architecture that inspires — delivered in months, not years. Fire-resistant, pre-insured, and crafted with intention, each Versa Villa home is built to stand secure while feeling effortlessly refined.
+			</p>
+			<button class="cta" class:visible={mounted} on:click={openModal}>
+				<span class="cta-text">Sign up for updates</span>
+				<span class="cta-arrow">→</span>
+				<span class="cta-line"></span>
+			</button>
+		</div>
+	</div>
+</section>
 
-    <!-- Fire Resistance Feature -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-             <div class="md:col-span-5">
-                <img src={fireResistantImage} alt="Fire-Resistant Construction" class="w-full aspect-[4/5] object-cover" />
-            </div>
-            <div class="md:col-span-6 md:col-start-7">
-                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Built for Wildfire Zones</h2>
-                <p class="text-gray-600 text-sm leading-relaxed font-light mb-4">
-                    Purpose-built to exceed California's stringent wildfire building codes, every Versa Villa home features advanced fire-resistant materials and construction techniques engineered specifically for wildfire-prone areas.
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed font-light mb-6">
-                    This isn't just about safety—it's about significant insurance cost savings. Our pre-insurance benefits represent a massive selling point, with homeowners seeing substantial reductions in their insurance premiums year after year.
-                </p>
-                <div class="border-t border-gray-200 pt-6">
-                    <p class="text-xs text-gray-400 font-light uppercase tracking-wider">
-                        Serving Palisades, Altadena, Malibu, and wildfire-prone areas throughout California
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Modal -->
+{#if showModal}
+	<!-- svelte-ignore a11y_click_events_have_key_events a11y_interactive_supports_focus -->
+	<div class="modal-overlay" on:click={closeModal} role="dialog" aria-modal="true" tabindex="-1">
+		<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+		<div class="modal" on:click|stopPropagation role="document">
+			<button class="modal-close" on:click={closeModal} aria-label="Close">×</button>
 
-    <!-- Interior Showcase Grid -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-start">
-            <img src={bedroomImage} alt="Master Bedroom" class="w-full aspect-[3/4] object-cover" />
-            <div class="md:pt-32">
-                 <img src={kitchenImage} alt="Luxury Kitchen" class="w-full aspect-[3/4] object-cover" />
-            </div>
-        </div>
-        <div class="flex justify-end">
-             <p class="text-xs text-gray-400 font-light max-w-md leading-relaxed">
-                Every finish, fixture, and material is carefully selected from our designer-curated packages. High-end appliances, premium countertops, and sophisticated lighting come standard—luxury that maintains investment value without the overwhelming burden of endless decisions.
-            </p>
-        </div>
-    </section>
+			{#if !submitted}
+				<h2 class="modal-title">Stay Updated</h2>
+				<p class="modal-subtitle">Be the first to know about Versa Villa developments.</p>
 
-    <!-- Outdoor Living -->
-    <section class="w-full mb-24 md:mb-32">
-        <img src={outdoorLivingImage} alt="Outdoor Living Space" class="w-full h-[70vh] object-cover" />
-    </section>
+				<form on:submit={handleSubmit} class="modal-form">
+					<div class="form-field">
+						<input
+							type="text"
+							bind:this={nameInput}
+							bind:value={fullName}
+							placeholder="Full Name"
+							required
+							class="form-input"
+							autocomplete="off"
+							data-1p-ignore
+						/>
+					</div>
+					<div class="form-field">
+						<input
+							type="email"
+							bind:value={email}
+							placeholder="Email Address"
+							required
+							class="form-input"
+							autocomplete="off"
+							data-1p-ignore
+						/>
+					</div>
+					<button type="submit" class="form-submit">
+						<span>Subscribe</span>
+						<span class="submit-arrow">→</span>
+					</button>
+				</form>
+			{:else}
+				<div class="success-message">
+					<h2 class="modal-title">Thank you</h2>
+					<p class="modal-subtitle">We'll be in touch soon.</p>
+				</div>
+			{/if}
+		</div>
+	</div>
+{/if}
 
-    <!-- Founders Section -->
-    <section id="founders" class="max-w-[1200px] mx-auto px-6 mb-24 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src={foundersImage} alt="Ardie and Emila Tavangarian" class="w-full aspect-[16/9] object-cover" />
-            </div>
-            <div>
-                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Meet the Founders</h2>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Ardie Tavangarian, CEO</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed font-light">
-                            Ardie's decades in architectural excellence and construction innovation give him deep insight into luxury homebuilding inefficiencies. His vision to guarantee 6-month timelines stems from firsthand frustration with traditional construction's delays and cost overruns.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Emila Tavangarian, Head of Sales</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed font-light">
-                            Emila's experience in luxury design and client relations positions her to understand discerning homeowners' frustrations with traditional builders. Her drive comes from witnessing clients endure years of construction stress and broken promises.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<style>
+	:global(body) {
+		margin: 0;
+		padding: 0;
+	}
 
-    <!-- Happy Homeowners -->
-    <section class="max-w-[1600px] mx-auto px-6 mb-32 md:mb-40">
-        <div class="relative">
-            <img src={happyFamilyImage} alt="Happy Homeowners" class="w-full aspect-[16/9] object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
-                <p class="text-2xl md:text-3xl font-display mb-4 max-w-2xl">
-                    "We moved into our dream home in exactly six months. No delays, no surprises, just exceptional quality."
-                </p>
-                <p class="text-sm font-light opacity-90">Palisades Homeowner</p>
-            </div>
-        </div>
-    </section>
+	.hero {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
 
-    <!-- Why Choose Us -->
-    <section id="why-versa" class="bg-gray-50 py-24 mb-32">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl text-gray-900 mb-6">Why Discerning Homeowners Choose Versa Villa</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-                <div class="bg-white p-8">
-                    <h3 class="font-bold text-lg mb-3 uppercase tracking-wide">Traditional Construction</h3>
-                    <ul class="space-y-2 text-gray-600 font-light">
-                        <li>• 12-24 months to completion</li>
-                        <li>• 20-40% cost overruns typical</li>
-                        <li>• Endless decisions and stress</li>
-                        <li>• Weather delays and quality issues</li>
-                        <li>• Constant contractor coordination</li>
-                        <li>• Variable on-site quality control</li>
-                    </ul>
-                </div>
-                <div class="bg-black text-white p-8">
-                    <h3 class="font-bold text-lg mb-3 uppercase tracking-wide">Versa Villa</h3>
-                    <ul class="space-y-2 font-light">
-                        <li>• 6 months guaranteed timeline</li>
-                        <li>• Fixed pricing, zero surprises</li>
-                        <li>• Curated choices, stress-free</li>
-                        <li>• Factory precision, no delays</li>
-                        <li>• Concierge project management</li>
-                        <li>• Automobile-industry quality standards</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+	.hero-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+	}
 
-    <!-- Final CTA -->
-    <section id="contact" class="w-full mb-32">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="bg-primary-950 text-white p-12 md:p-20 text-center">
-                <h2 class="font-display text-3xl md:text-5xl mb-6">Ready to Build Your Dream Home?</h2>
-                <p class="text-lg font-light mb-8 opacity-90 max-w-2xl mx-auto">
-                    Schedule a consultation to explore your design options, review our process, and discover how we can deliver your luxury home in just six months.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" class="bg-white text-black px-8 py-4 text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors">
-                        Schedule Consultation
-                    </a>
-                    <a href="#" class="border border-white text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
-                        Virtual Walkthrough
-                    </a>
-                </div>
-                <p class="text-xs mt-8 opacity-75">Serving Palisades, Altadena, Malibu, and all of California</p>
-            </div>
-        </div>
-    </section>
-</div>
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(10, 12, 8, 0.7);
+	}
 
+	.hero-gradient-left {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 80%;
+		background: radial-gradient(ellipse 80% 70% at 20% 80%, rgba(0, 0, 0, 0.45) 0%, transparent 100%);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.hero-gradient-right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 60%;
+		background: radial-gradient(ellipse 60% 80% at 85% 15%, rgba(0, 0, 0, 0.35) 0%, transparent 100%);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.hero-line {
+		position: absolute;
+		top: 28%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: rgba(243, 243, 244, 0.15);
+		z-index: 1;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		color: #F3F3F4;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Header */
+	.header {
+		padding: 2.5rem 5% 2.5rem 15%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+
+	.logo {
+		opacity: 0;
+		transform: translateY(-10px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+	}
+
+	.logo.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.logo-img {
+		height: clamp(2.5rem, 4vw, 3.5rem);
+		width: auto;
+	}
+
+	.description {
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+		font-weight: 400;
+		font-style: normal;
+		line-height: normal;
+		max-width: 32rem;
+		margin: 0;
+		text-align: justify;
+		opacity: 0;
+		transform: translateY(-10px);
+		transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+		position: relative;
+	}
+
+	.description.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Main Content */
+	.main-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0 15%;
+		padding-bottom: 8rem;
+		position: relative;
+	}
+
+	.headline {
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(1.75rem, 4vw, 3.5rem);
+		font-weight: 400;
+		font-style: normal;
+		line-height: 1.1;
+		margin: 0 0 3.5rem 0;
+		letter-spacing: -0.02em;
+		max-width: 45rem;
+	}
+
+	.line {
+		display: block;
+		overflow: hidden;
+	}
+
+	.line-inner {
+		display: block;
+		transform: translateY(100%);
+		transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+		transition-delay: var(--delay, 0s);
+	}
+
+	.line.visible .line-inner {
+		transform: translateY(0);
+	}
+
+	/* CTA */
+	.cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		color: #F3F3F4;
+		text-decoration: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(1.5rem, 3vw, 2.75rem);
+		font-weight: 400;
+		position: relative;
+		width: fit-content;
+		letter-spacing: -0.02em;
+		line-height: 1;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.cta.visible {
+		animation: ctaFadeIn 0.6s ease 0.9s forwards;
+	}
+
+	@keyframes ctaFadeIn {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.cta.visible:hover {
+		opacity: 1;
+		transform: translateX(0.3em);
+		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+	}
+
+	.cta::before {
+		content: '';
+		position: absolute;
+		top: -0.15em;
+		bottom: -0.15em;
+		left: -0.3em;
+		right: -0.3em;
+		background: #F3F3F4;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		z-index: -1;
+	}
+
+	.cta:hover::before {
+		transform: scaleX(1);
+	}
+
+	.cta:hover {
+		color: black;
+	}
+
+	.cta-text {
+		position: relative;
+	}
+
+	.cta-arrow {
+		transition: transform 0.3s ease;
+	}
+
+	.cta:hover .cta-arrow {
+		transform: translateX(0.1em);
+	}
+
+	.cta-line {
+		position: absolute;
+		bottom: -0.2em;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: #F3F3F4;
+		transition: background 0.3s ease;
+	}
+
+	.cta:hover .cta-line {
+		background: black;
+	}
+
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.header {
+			padding: 2.5rem 8%;
+		}
+
+		.main-content {
+			padding: 0 8%;
+			padding-bottom: 6rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.header {
+			padding: 2rem 6%;
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+
+		.description {
+			max-width: 100%;
+			text-align: left;
+		}
+
+		.main-content {
+			padding: 0 6%;
+			padding-bottom: 4rem;
+		}
+	}
+
+	/* Mobile description - hidden by default, shown on mobile */
+	.description-mobile {
+		display: none;
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: 0.9375rem;
+		font-weight: 400;
+		line-height: 1.6;
+		color: rgba(243, 243, 244, 0.85);
+		margin: 1.5rem 0 2rem 0;
+		max-width: 100%;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: opacity 0.6s ease 0.7s, transform 0.6s ease 0.7s;
+	}
+
+	.description-mobile.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@media (max-width: 480px) {
+		.description {
+			display: none;
+		}
+
+		.description-mobile {
+			display: block;
+		}
+
+		.main-content {
+			padding-bottom: 3rem;
+		}
+
+		.headline {
+			margin-bottom: 0;
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.8s ease 0.3s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+		}
+
+		.headline:has(.line.visible) {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		/* Let text flow naturally on mobile */
+		.line {
+			display: inline;
+		}
+
+		.line-inner {
+			display: inline;
+			transform: none;
+		}
+	}
+
+	/* Modal */
+	.modal-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(10, 12, 8, 0.9);
+		backdrop-filter: blur(8px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 100;
+		animation: fadeIn 0.3s ease;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	.modal {
+		background: rgba(20, 24, 18, 0.95);
+		border: 1px solid rgba(243, 243, 244, 0.1);
+		padding: clamp(2rem, 5vw, 3.5rem);
+		max-width: 28rem;
+		width: 90%;
+		position: relative;
+		animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	@keyframes slideUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.modal-close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: none;
+		border: none;
+		color: #F3F3F4;
+		font-size: 1.5rem;
+		cursor: pointer;
+		opacity: 0.5;
+		transition: opacity 0.2s ease;
+		line-height: 1;
+		padding: 0.5rem;
+	}
+
+	.modal-close:hover {
+		opacity: 1;
+	}
+
+	.modal-title {
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 400;
+		color: #F3F3F4;
+		margin: 0 0 0.75rem 0;
+		letter-spacing: -0.02em;
+	}
+
+	.modal-subtitle {
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(0.875rem, 1.5vw, 1rem);
+		color: rgba(243, 243, 244, 0.6);
+		margin: 0 0 2rem 0;
+		line-height: 1.5;
+	}
+
+	.modal-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.form-field {
+		position: relative;
+	}
+
+	.form-input {
+		width: 100%;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid rgba(243, 243, 244, 0.2);
+		padding: 0.75rem 0;
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(1rem, 1.5vw, 1.125rem);
+		color: #F3F3F4;
+		outline: none;
+		transition: border-color 0.3s ease;
+	}
+
+	.form-input::placeholder {
+		color: rgba(243, 243, 244, 0.4);
+	}
+
+	.form-input:focus {
+		border-color: #F3F3F4;
+	}
+
+	.form-submit {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: #F3F3F4;
+		color: #0a0c08;
+		border: none;
+		padding: 1rem 1.5rem;
+		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
+		font-size: clamp(1rem, 1.5vw, 1.125rem);
+		font-weight: 400;
+		cursor: pointer;
+		margin-top: 1rem;
+		transition: background 0.3s ease, transform 0.3s ease;
+		width: fit-content;
+	}
+
+	.form-submit:hover {
+		background: #ffffff;
+		transform: translateX(4px);
+	}
+
+	.submit-arrow {
+		transition: transform 0.3s ease;
+	}
+
+	.form-submit:hover .submit-arrow {
+		transform: translateX(4px);
+	}
+
+	.success-message {
+		text-align: center;
+		padding: 2rem 0;
+	}
+</style>
