@@ -6,7 +6,10 @@
 	let fullName = '';
 	let email = '';
 	let submitted = false;
+	let submitting = false;
 	let nameInput: HTMLInputElement | undefined;
+
+	const WEB3FORMS_KEY = '038eb825-64f5-4dd9-9a18-7ca04024aa11';
 
 	onMount(() => {
 		mounted = true;
@@ -22,17 +25,38 @@
 		showModal = false;
 	}
 
-	function handleSubmit(e: Event) {
+	async function handleSubmit(e: Event) {
 		e.preventDefault();
-		// Handle form submission here
-		console.log({ fullName, email });
-		submitted = true;
-		setTimeout(() => {
-			showModal = false;
-			submitted = false;
-			fullName = '';
-			email = '';
-		}, 2000);
+		submitting = true;
+
+		try {
+			const response = await fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					access_key: WEB3FORMS_KEY,
+					name: fullName,
+					email: email,
+					subject: 'New Versa Villa Signup'
+				})
+			});
+
+			if (response.ok) {
+				submitted = true;
+				setTimeout(() => {
+					showModal = false;
+					submitted = false;
+					fullName = '';
+					email = '';
+				}, 2000);
+			}
+		} catch (error) {
+			console.error('Form submission error:', error);
+		} finally {
+			submitting = false;
+		}
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -51,7 +75,6 @@
 	<div class="hero-overlay"></div>
 	<div class="hero-gradient-left"></div>
 	<div class="hero-gradient-right"></div>
-	<div class="hero-line"></div>
 
 	<div class="hero-content">
 		<!-- Header -->
@@ -60,7 +83,7 @@
 				<img src="/logo-versa.svg" alt="Versa Villa by ARYA" class="logo-img" />
 			</div>
 			<p class="description" class:visible={mounted}>
-				Born from resilience and engineered for peace of mind, our homes bring the protection you need together with the architecture that inspires — delivered in months, not years. Fire-resistant, pre-insured, and crafted with intention, each Versa Villa home is built to stand secure while feeling effortlessly refined.
+                Coming January 2026
 			</p>
 		</header>
 
@@ -68,16 +91,16 @@
 		<div class="main-content">
 			<h1 class="headline">
 				<span class="line" class:visible={mounted} style="--delay: 0.3s">
-					<span class="line-inner">Versa Villa was created with one</span>
+					<span class="line-inner">Born from resilience, Versa Villa</span>
 				</span>
 				<span class="line" class:visible={mounted} style="--delay: 0.4s">
-					<span class="line-inner">purpose: to rebuild stronger,</span>
+					<span class="line-inner">was created with one purpose:</span>
 				</span>
 				<span class="line" class:visible={mounted} style="--delay: 0.5s">
-					<span class="line-inner">safer, and more beautifully than</span>
+					<span class="line-inner">to rebuild what was lost —</span>
 				</span>
 				<span class="line" class:visible={mounted} style="--delay: 0.6s">
-					<span class="line-inner">ever before.</span>
+					<span class="line-inner">stronger, safer, and built to last.</span>
 				</span>
 			</h1>
 			<p class="description-mobile" class:visible={mounted}>
@@ -128,9 +151,11 @@
 							data-1p-ignore
 						/>
 					</div>
-					<button type="submit" class="form-submit">
-						<span>Subscribe</span>
-						<span class="submit-arrow">→</span>
+					<button type="submit" class="form-submit" disabled={submitting}>
+						<span>{submitting ? 'Submitting...' : 'Subscribe'}</span>
+						{#if !submitting}
+							<span class="submit-arrow">→</span>
+						{/if}
 					</button>
 				</form>
 			{:else}
@@ -219,7 +244,7 @@
 
 	/* Header */
 	.header {
-		padding: 2.5rem 5% 2.5rem 15%;
+		padding: 2.5rem 5%;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -238,19 +263,19 @@
 	}
 
 	.logo-img {
-		height: clamp(2.5rem, 4vw, 3.5rem);
+		height: clamp(3.5rem, 6vw, 5rem);
 		width: auto;
 	}
 
 	.description {
 		font-family: 'Neue Haas Grotesk Display', Helvetica, Arial, sans-serif;
-		font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+		font-size: clamp(1.125rem, 1.5vw, 1.5rem);
 		font-weight: 400;
 		font-style: normal;
 		line-height: normal;
 		max-width: 32rem;
 		margin: 0;
-		text-align: justify;
+		text-align: right;
 		opacity: 0;
 		transform: translateY(-10px);
 		transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
@@ -268,7 +293,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 0 15%;
+		padding: 0 5%;
 		padding-bottom: 8rem;
 		position: relative;
 	}
@@ -606,6 +631,17 @@
 
 	.form-submit:hover .submit-arrow {
 		transform: translateX(4px);
+	}
+
+	.form-submit:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	.form-submit:disabled:hover {
+		background: #F3F3F4;
+		transform: none;
 	}
 
 	.success-message {
