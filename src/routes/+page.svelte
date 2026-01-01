@@ -103,14 +103,14 @@
 					<span class="line-inner">stronger, safer, and built to last.</span>
 				</span>
 			</h1>
-			<p class="description-mobile" class:visible={mounted}>
-				Born from resilience and engineered for peace of mind, our homes bring the protection you need together with the architecture that inspires — delivered in months, not years. Fire-resistant, pre-insured, and crafted with intention, each Versa Villa home is built to stand secure while feeling effortlessly refined.
-			</p>
 			<button class="cta" class:visible={mounted} on:click={openModal}>
 				<span class="cta-text">Sign up for updates</span>
 				<span class="cta-arrow">→</span>
 				<span class="cta-line"></span>
 			</button>
+			<p class="description-mobile" class:visible={mounted}>
+				Coming January 2026
+			</p>
 		</div>
 	</div>
 </section>
@@ -468,6 +468,9 @@
 
 		.description-mobile {
 			display: block;
+			font-size: 0.875rem;
+			color: rgba(243, 243, 244, 0.6);
+			margin: 1.5rem 0 0 0;
 		}
 
 		.main-content {
@@ -475,7 +478,7 @@
 		}
 
 		.headline {
-			margin-bottom: 0;
+			margin-bottom: 1.5rem;
 			opacity: 0;
 			transform: translateY(20px);
 			transition: opacity 0.8s ease 0.3s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
