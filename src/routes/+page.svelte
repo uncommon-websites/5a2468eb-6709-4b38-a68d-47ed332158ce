@@ -83,7 +83,7 @@
 				<img src="/logo-versa.svg" alt="Versa Villa by ARYA" class="logo-img" />
 			</div>
 			<p class="description" class:visible={mounted}>
-                Coming January 2026
+                Coming 2026
 			</p>
 		</header>
 
