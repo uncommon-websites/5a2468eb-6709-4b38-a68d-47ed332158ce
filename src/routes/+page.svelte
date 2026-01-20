@@ -5,6 +5,7 @@
 	let showModal = false;
 	let fullName = '';
 	let email = '';
+	let phoneNumber = '';
 	let submitted = false;
 	let submitting = false;
 	let nameInput: HTMLInputElement | undefined;
@@ -39,6 +40,7 @@
 					access_key: WEB3FORMS_KEY,
 					name: fullName,
 					email: email,
+					phone: phoneNumber,
 					subject: 'New Versa Villa Signup'
 				})
 			});
@@ -50,6 +52,7 @@
 					submitted = false;
 					fullName = '';
 					email = '';
+					phoneNumber = '';
 				}, 2000);
 			}
 		} catch (error) {
@@ -145,6 +148,17 @@
 							type="email"
 							bind:value={email}
 							placeholder="Email Address"
+							required
+							class="form-input"
+							autocomplete="off"
+							data-1p-ignore
+						/>
+					</div>
+					<div class="form-field">
+						<input
+							type="tel"
+							bind:value={phoneNumber}
+							placeholder="Phone Number"
 							required
 							class="form-input"
 							autocomplete="off"
