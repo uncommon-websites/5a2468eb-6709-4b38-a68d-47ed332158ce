@@ -1,25 +1,13 @@
 # Todo Archive
 
 
-## Session: 2026-01-20T18:19:08.898Z
+## Session: 2026-01-29T23:10:30.884Z
 
 <!-- DO NOT EDIT - Managed by todo_list tool -->
-<!-- Updated: 2026-01-20T18:18:59.158Z -->
+<!-- Updated: 2026-01-29T23:09:56.409Z -->
 
 # Current Todo List State
 
-- [ ] Remove 'January' text
-
-──────────────────────────────────────────────────
-
-## Session: 2026-01-20T18:20:51.912Z
-
-<!-- DO NOT EDIT - Managed by todo_list tool -->
-<!-- Updated: 2026-01-20T18:20:30.513Z -->
-
-# Current Todo List State
-
-- [ ] Add phone number input field
-- [ ] Update form label for phone
+- [ ] Add image upload instructions
 
 ──────────────────────────────────────────────────
