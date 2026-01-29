@@ -1,10 +1,10 @@
 <script lang="ts">
     // Versa Villa Images
     const heroImage = "/generated/image-stunning-modern-luxury-home-exterior-wit-1766525539361-0.webp";
-    const capeCodImage = "/generated/image-elegant-cape-cod-style-luxury-home-with--1766525542498-1.webp";
-    const traditionalImage = "/generated/image-classic-traditional-luxury-home-with-bri-1766525545393-2.webp";
-    const modernImage = "/generated/image-contemporary-modern-luxury-home-with-cle-1766525548072-3.webp";
-    const mediterraneanImage = "/generated/image-mediterranean-villa-with-terracotta-roof-1766525551080-4.webp";
+    const capeCodImage = "/generated/image-elegant-cape-cod-style-luxury-home-exter-1769729079231-0.webp";
+    const traditionalImage = "/generated/image-classic-traditional-luxury-home-exterior-1769729082596-1.webp";
+    const modernImage = "/generated/image-contemporary-modern-luxury-home-exterior-1769729085827-2.webp";
+    const mediterraneanImage = "/generated/image-mediterranean-villa-exterior-with-terrac-1769729088542-3.webp";
     const factoryImage = "/generated/image-advanced-factory-floor-with-precision-en-1766526812739-0.webp";
     const fireResistantImage = "/generated/image-luxury-home-detail-showing-fire-resistan-1766525556373-6.webp";
     const foundersImage = "/generated/image-professional-couple-in-their-50s-archite-1766525558982-7.webp";
